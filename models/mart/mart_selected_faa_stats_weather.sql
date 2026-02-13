@@ -37,5 +37,5 @@ SELECT city, country, name, tf.*
 FROM total_flights tf
 LEFT JOIN {{ref('prep_airports')}} a
 ON tf.airport_code = a.faa
-LEFT JOIN prep_weather_daily w
+LEFT JOIN {{ref('prep_weather_daily')}} w
 ON tf.airport_code = w.airport_code
