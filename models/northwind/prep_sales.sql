@@ -19,4 +19,4 @@ FROM order_details d
 LEFT JOIN orders o
 ON d.order_id = o.order_id
 LEFT JOIN products p
-ON d.product_id = p.product_id;
+ON d.product_id = p.product_id
