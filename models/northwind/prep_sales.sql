@@ -3,26 +3,19 @@ SELECT *
 FROM {{ref('staging_order_details')}}
 ),
 orders AS (
-SELECT customer_id
-		, employee_id
-		, order_date
-		, required_date
-		, shipped_date
-		, ship_via
-		, ship_city
-		, ship_country
+SELECT *
 FROM {{ref('staging_orders')}}
 ),
 products AS (
-SELECT product_name
-		, supplier_id
-		, category_id
-		, unit_price
+SELECT *
 FROM {{ref('staging_products')}}
 )
 SELECT d.*
-		, o.*
-		, p.*
+		, o.customer_id
+		, o.employee_id
+		, o.order_date
+		, p.product_name
+		, p.supplier_id
 		, d.unit_price * d.quantity * (1 - d.discount) AS revenue
 		, date_part('year', order_date)
 FROM order_details d
