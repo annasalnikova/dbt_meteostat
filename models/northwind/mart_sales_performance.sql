@@ -10,6 +10,6 @@ SELECT date_part('year', order_date)
 FROM prep
 LEFT JOIN {{ref('staging_categories')}} c
 ON prep.category_id = c.category_id
-GROUP BY date_part('year', order_date)
-		, date_part('month', order_date)
+GROUP BY date_part('year', order_date) AS year
+		, date_part('month', order_date) AS month
 		, category_name
