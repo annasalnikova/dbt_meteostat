@@ -18,6 +18,7 @@ SELECT d.*
 		, p.supplier_id
 		, d.unit_price * d.quantity * (1 - d.discount) AS revenue
 		, date_part('year', order_date)
+        , category_id
 FROM order_details d
 LEFT JOIN orders o
 ON d.order_id = o.order_id
