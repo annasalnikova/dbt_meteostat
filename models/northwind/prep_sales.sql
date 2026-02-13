@@ -3,11 +3,21 @@ SELECT *
 FROM {{ref('staging_order_details')}}
 ),
 orders AS (
-SELECT *
+SELECT customer_id
+		, employee_id
+		, order_date
+		, required_date
+		, shipped_date
+		, ship_via
+		, ship_city
+		, ship_country
 FROM {{ref('staging_orders')}}
 ),
 products AS (
-SELECT *
+SELECT product_name
+		, supplier_id
+		, category_id
+		, unit_price
 FROM {{ref('staging_products')}}
 )
 SELECT d.*
