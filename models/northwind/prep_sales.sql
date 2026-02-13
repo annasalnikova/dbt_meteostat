@@ -1,14 +1,14 @@
 WITH order_details AS (
 SELECT *
-FROM {{ source('northwind', 'order_details') }}
+FROM {{ref('staging_order_details')}}
 ),
 orders AS (
 SELECT *
-FROM {{ source('northwind', 'orders') }}
+FROM {{ref('staging_orders')}}
 ),
 products AS (
 SELECT *
-FROM {{ source('northwind', 'products') }}
+FROM {{ref('staging_products')}}
 )
 SELECT d.*
 		, o.*
