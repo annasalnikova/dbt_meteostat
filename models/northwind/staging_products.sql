@@ -1,6 +1,6 @@
 WITH products AS (
 SELECT *
-FROM {{ source('northwind', 'northwind_products') }}
+FROM {{ source('northwind', 'products') }}
 )
 SELECT productid AS product_id
 		, productname AS product_name

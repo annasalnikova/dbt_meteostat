@@ -7,4 +7,4 @@ SELECT orderid AS order_id
 		, shipvia AS ship_via
 		, shipcity AS ship_city
 		, shipcountry AS ship_country
-FROM {{ source('northwind', 'northwind_orders') }}
+FROM {{ source('northwind', 'orders') }}
