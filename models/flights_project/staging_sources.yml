@@ -1,0 +1,10 @@
+version: 2
+sources:
+
+- name: flights_project
+  schema: air_force
+  tables:
+    - name: project_flights
+    - name: project_weather_daily
+    - name: project_weather_hourly_raw
+    - name: project_airports

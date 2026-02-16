@@ -36,6 +36,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+    flights_project:
+      +materialized: table
     northwind:
       +materialized: table
     # Applies to all files under models/staging/
