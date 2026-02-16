@@ -1,7 +1,7 @@
 version: 2
 sources:
 
-- name: flights_project
+- name: air_force
   schema: air_force
   tables:
     - name: project_flights
